@@ -14,8 +14,9 @@ install-linux-packages() {
     echo "  - git"
     echo "-----------------------------------------------------------"
 
-    sudo apt-get update
-    sudo apt-get install -y zsh curl git tree
+    sudo apt update
+    sudo apt install -y zsh curl git tree
+    sudo chsh -s /bin/zsh
 }
 
 clone-repo() {
@@ -41,6 +42,7 @@ install-nodejs() {
 
         curl https://get.volta.sh | bash
         volta install node
+        source ~/.bashrc
         echo "-----------------------------------------------------------"
         echo -n "* NVM Verision: "
         node -v
