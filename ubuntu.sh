@@ -88,15 +88,15 @@ finish() {
 
 start
 install-linux-packages
-clone-repo
-setup-omz
-install-nodejs
-lazygit
-install-nali
-install-ctop
-thefuck
-ci_editor
-zshrc
-chmod
-upgrade-packages
-finish
+#clone-repo
+#setup-omz
+#install-nodejs
+#lazygit
+#install-nali
+#install-ctop
+#thefuck
+#ci_editor
+#zshrc
+#chmod
+#upgrade-packages
+#finish
