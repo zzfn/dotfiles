@@ -35,7 +35,6 @@ setup-omz() {
 
 
 install-nodejs() {
-    install-nvm() {
         echo "-----------------------------------------------------------"
         echo "* Installing NVM..."
         echo "-----------------------------------------------------------"
@@ -44,69 +43,8 @@ install-nodejs() {
         volta install node
         echo "-----------------------------------------------------------"
         echo -n "* NVM Verision: "
-        command -v node
-    }
-
-    install-node() {
-        echo "-----------------------------------------------------------"
-        echo "* Installing NodeJS 10..."
-        echo "-----------------------------------------------------------"
-
-        nvm install 10
-
-        echo "-----------------------------------------------------------"
-        echo "* Set NodeJS 10 as default..."
-        echo "-----------------------------------------------------------"
-
-        nvm use v10
-        nvm alias default v10
-
-        echo "-----------------------------------------------------------"
-        echo -n "* NodeJS Version: "
-
         node -v
-    }
-
-    install-yarn() {
         echo "-----------------------------------------------------------"
-        echo "* Installing Yarn..."
-        echo "-----------------------------------------------------------"
-
-        curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-        echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-        sudo apt-get update && sudo apt-get install --no-install-recommends yarn
-
-        echo "-----------------------------------------------------------"
-        echo -n "* Yarn Version: "
-
-        yarn --version
-    }
-
-    yarn-global-add() {
-        echo "-----------------------------------------------------------"
-        echo "* Yarn Global Add those packages:"
-        echo ""
-        echo "  - http-server"
-        echo "  - serve"
-        echo "  - hexo-cli"
-        echo "  - gulp-cli"
-        echo "  - docsify-cli"
-        echo "  - openload-cli"
-        echo "  - now"
-        echo "  - @upimg/cli"
-        echo "-----------------------------------------------------------"
-
-        yarn global add http-server serve hexo-cli gulp-cli docsify-cli openload-cli now @upimg/cli
-    }
-
-
-    echo "==========================================================="
-    echo "              Setting up NodeJS Environment"
-
-    install-nvm
-    install-node
-    install-yarn
-    yarn-global-add
 }
 
 zshrc() {
